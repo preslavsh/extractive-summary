@@ -1,0 +1,11 @@
+version: '3'
+
+services:
+  scrapy:
+    build: .
+    container_name: scrapy
+    volumes:
+      - .:/code
+    ports:
+      - "5400:5400"
+    entrypoint: ["/code/docker/startup/run.sh"]
