@@ -7,10 +7,17 @@ Latent Semantic Analysis и Text Rank. Първо ще разгледаме ст
 стъпки при "Extractive summarization"
 
 # Dataset 
-
+Вариант 1
 Използваме newsroom dataset, при който са събирани статии години наред 
 заедно като имаме налични и резюметата на статиите. Използваме първите 
 1000 елемента oт тестовия dataset.
+
+Вариант 2
+Използваме извлечени със *Scrapy* данни от раздела на *CNN* за здравни
+новини https://edition.cnn.com/health. От него извличаме параграфите
+за текст и използваме резюмето на новините от *meta* описанието на страницата.
+Използваме 100 записа. Използвайте cnn_crawler. Влезте в папката
+и `cnn_crawler` и използвайте командата `scrapy crawl cnn`
 
 [Newsroom](https://github.com/lil-lab/newsroom)
 
@@ -19,7 +26,7 @@ Latent Semantic Analysis и Text Rank. Първо ще разгледаме ст
 Създаване на междинна репрезентация на входния текст. 
 Има два подхода: topic representation и indicator representation.
 
-При topic representation намираме важните теми чрез SVD, 
+При topic representation намираме важните теми чрез SVD,
 докато при indicator representation oписваме изречения спрямо 
 различни фактори: при TextRank е cos оценката между две изречения.
 
